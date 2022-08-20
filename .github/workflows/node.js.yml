@@ -17,6 +17,7 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
+        ng-version: [10.x]
 
     steps:
     - uses: actions/checkout@v3
@@ -27,8 +28,8 @@ jobs:
         cache: 'npm'
     - name: Install deps
       run: npm install
+    - name: Install Angular CLI
+      run: npm install @angular/cli@{{matrix.ng-version}}
     - name: Prod build
       run: ng build --prod --base-href "https://aadhithyanbalaji.github.io/portfolio/"
-    - name: Deploy to Github Pages
-      uses: mikeal/npx@1.0.0
-    - run: npx angular-cli-ghpages --dir=dist/aadhi-portfolio --repo="https://github.com/AadhithyanBalaji/portfolio.git"
+    
