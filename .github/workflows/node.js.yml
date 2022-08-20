@@ -26,5 +26,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: ng build --prod --base-href "https://aadhithyanbalaji.github.io/portfolio/
+    - run: ng build --prod --base-href "https://aadhithyanbalaji.github.io/portfolio/"
     - run: npx angular-cli-ghpages --dir=dist/aadhi-portfolio --repo="https://github.com/AadhithyanBalaji/portfolio.git"
