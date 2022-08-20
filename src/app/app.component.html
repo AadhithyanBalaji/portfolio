@@ -1,0 +1,60 @@
+<div class="main-container">
+
+    <div class="profile-container">
+        <div class="profile-dp">
+            <img src="assets\images\Aadhithyan B.JPG" class="responsive" alt="Profile picture" title="Profile picture of Aadhithyan" />
+        </div>
+        <div class="profile-info">
+            <h4 style="text-align: right; padding: 15px 15px 0 0;">
+                <strong>Aadhithyan Balaji</strong>
+                <br />
+                Full stack web developer
+            </h4>
+            <h5 style="text-align: right; padding-right: 15px;">Actively looking for opportunities in Java & Python</h5>
+        </div>
+    </div>
+    <div class="tech-container">
+        <mat-card>
+            <mat-card-subtitle>Tech</mat-card-subtitle>
+            <div class="tech-logos-container">
+                <img *ngFor="let tech of techs" [src]="tech.src" [alt]="tech.name" [title]="tech.name" />
+            </div>
+        </mat-card>
+    </div>
+    <div class="proj-container">
+        <mat-card>
+            <mat-card-subtitle>Projects</mat-card-subtitle>
+            <mat-list>
+                <mat-list-item *ngFor="let project of projects">
+                    <div mat-line>
+                        <div style="display: flex; gap: 5px; justify-content: space-between; align-items: center;">
+                            <h4 style="margin:0">{{project.name}}</h4>
+                            <div style="font-size: 12px;"><span>{{project.start | date:'shortDate'}}</span> -
+                                <span>{{project.end |
+                                    date:'shortDate'}}</span>
+                            </div>
+
+                        </div>
+                        <h5 style="margin: 0;">{{project.desc}}</h5>
+                    </div>
+                    <mat-icon mat-list-icon (click)="openProjectInNewTab(project.link)">
+                        {{ project.link === '' ? 'cloud_off' : 'open_in_new'}}
+                    </mat-icon>
+                    <mat-divider></mat-divider>
+                </mat-list-item>
+            </mat-list>
+        </mat-card>
+    </div>
+</div>
+
+<div class="contact-container">
+    <span>Reach me at:</span>
+    <a href="https://github.com/AadhithyanBalaji" target="_blank"><img src="assets/images/github.svg" alt="Github"
+            title="GitHub"></a>
+    <a href="https://www.linkedin.com/in/aadhithyan-balaji-0288bb58/" target="_blank"><img
+            src="assets/images/linkedin.svg" alt="LinkedIn" title="LinkedIn"></a>
+    <a href="mailto:aadhithyanbalaji@gmail.com"><img src="assets/images/gmail.png" alt="Mail me" title="Mail me"></a>
+    <a href="assets/files/resume.pdf" download="Aadhithyan's resume">
+        <img src="assets/images/download.svg" alt="Resume" title="Get resume">
+    </a>
+</div>

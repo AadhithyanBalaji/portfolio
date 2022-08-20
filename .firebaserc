@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "aadhi-portfolio": {
+      "hosting": {
+        "aadhi-portfolio": [
+          "aadhi-portfolio"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "aadhi-portfolio"
+  }
+}
